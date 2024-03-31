@@ -1,9 +1,8 @@
-import BandeiraEntityFactory from "../../application/factory/BandeiraEntityFactory";
-import CanalVendaEntityFactory from "../../application/factory/CanalVendaEntityFactory";
-import EntityFactory from "../../application/factory/EntityFactory";
-import BandeirasRepository from "../../application/respository/BandeirasRepository";
-import CanalVendaRepository from "../../application/respository/CanalVendaRepository";
-
+import BandeiraEntityFactory from "./BandeiraEntityFactory";
+import CanalVendaEntityFactory from "./CanalVendaEntityFactory";
+import EntityFactory from "./EntityFactory";
+import BandeirasRepository from "../respository/BandeirasRepository";
+import CanalVendaRepository from "../respository/CanalVendaRepository";
 
 export default class CsvEntityFactory {
     constructor(
@@ -13,7 +12,6 @@ export default class CsvEntityFactory {
 
     create(entityName: string): EntityFactory {
         if (entityName === "bandeiras") {
-            
             return new BandeiraEntityFactory(this.bandeirasRepository);
         }
 

@@ -1,6 +1,6 @@
 import readLine from 'readline';
 import fs from 'fs';
-import CsvEntityFactory from '../../infra/factory/CsvEntityFactory';
+import CsvEntityFactory from '../factory/CsvEntityFactory';
 import EntityFactory from '../factory/EntityFactory';
 import BandeirasRepository from '../respository/BandeirasRepository';
 import CanalVendaRepository from '../respository/CanalVendaRepository';
@@ -24,7 +24,7 @@ export default class ProcessarCsvs {
 
             for await (const line of readedLine) {
                 const lineSplitted = line.replaceAll("\"", "").split(";");
-                entity.processCsv(lineSplitted);
+                await entity.processCsv(lineSplitted);
             }
         }
     }
