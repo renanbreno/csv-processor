@@ -1,4 +1,4 @@
-import CanalVenda from "../../domain/entity/CanalVenda";
+import CanalVendaModel from "../../domain/models/CanalVendaModel";
 import CanalVendaMapper from "../mappers/CanalVendaMapper";
 import CanalVendaRepository from "../respository/CanalVendaRepository";
 import EntityFactory from "./EntityFactory";
@@ -9,7 +9,7 @@ export default class CanalVendaEntityFactory implements EntityFactory {
     async processCsv(content: string[]): Promise<void> {
             const canalVendaMapper = new CanalVendaMapper(content);
             const canalVendaObj = canalVendaMapper.toObject();
-            const canalVenda = new CanalVenda(canalVendaObj);
+            const canalVenda = new CanalVendaModel(canalVendaObj);
             await this.canalVendaRepository.save(canalVenda)
         }
     }

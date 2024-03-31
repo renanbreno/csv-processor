@@ -1,5 +1,5 @@
 import {PrismaClient } from '@prisma/client'
-import Bandeira from "../../domain/entity/Bandeira";
+import Bandeira from "../../domain/models/BandeiraModel";
 import BandeirasRepository from "../../application/respository/BandeirasRepository";
 
 export default class BandeirasRepositoryDatabase implements BandeirasRepository {
@@ -11,6 +11,7 @@ export default class BandeirasRepositoryDatabase implements BandeirasRepository 
                 id: bandeira.id,
                 descricao: bandeira.description,
             }
+            
         })    
     }
 

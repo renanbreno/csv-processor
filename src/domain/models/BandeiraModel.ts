@@ -1,4 +1,4 @@
-export default class Bandeira {
+export default class BandeiraModel {
     id: number
     description: string
 

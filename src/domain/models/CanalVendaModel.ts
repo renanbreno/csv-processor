@@ -1,4 +1,4 @@
-export default class CanalVenda {
+export default class CanalVendaModel {
     id: number
     enterpriseCode: number
     description: string

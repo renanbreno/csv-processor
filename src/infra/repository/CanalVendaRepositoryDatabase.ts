@@ -1,4 +1,4 @@
-import CanalVenda from "../../domain/entity/CanalVenda";
+import CanalVenda from "../../domain/models/CanalVendaModel";
 import CanalVendaRepository from "../../application/respository/CanalVendaRepository";
 import {PrismaClient } from '@prisma/client'
 
