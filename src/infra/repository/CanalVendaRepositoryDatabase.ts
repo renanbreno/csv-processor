@@ -1,14 +1,10 @@
-import CanalVenda from "./CanalVenda";
-import CanalVendaRepository from "./CanalVendaRepository";
+import CanalVenda from "../../domain/entity/CanalVenda";
+import CanalVendaRepository from "../../application/respository/CanalVendaRepository";
 import {PrismaClient } from '@prisma/client'
-import CanalVendaMapper from "./mappers/CanalVendaMapper";
 
 export default class CanalVendaRepositoryDatabase implements CanalVendaRepository {
-    prisma: PrismaClient = new PrismaClient()
-
-    constructor() {}
+    constructor(private readonly prisma: PrismaClient) {}
     async save(canalVenda: CanalVenda): Promise<void> {
-        console.log(canalVenda, "aaaa")
         await this.prisma.canalVenda.create({
             data: {
                 id: canalVenda.id,
@@ -37,9 +33,6 @@ export default class CanalVendaRepositoryDatabase implements CanalVendaRepositor
         }
     
         return canalVenda;
-        // const canalVendaMapper = new CanalVendaMapper(canalVenda);
-        // return new CanalVenda(canalVendaMapper)
-
     }
 
 }

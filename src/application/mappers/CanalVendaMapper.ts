@@ -14,8 +14,6 @@ export default class CanalVendaMapper {
             maestroId
         }
 
-        console.log(canalVendaObj)
-
         return canalVendaObj;
     }
 }

@@ -8,7 +8,6 @@ export default class CanalVenda {
     maestroId: string
 
     constructor(private readonly canalVenda) {
-    
-        Object.assign(this, canalVenda)
+        Object.assign(this, this.canalVenda)
     }
 }
