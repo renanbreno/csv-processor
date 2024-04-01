@@ -11,7 +11,10 @@ export default class ProcessarCsvs {
         private readonly canalVendaRepository: CanalVendaRepository
     ) {}
 
-      async execute(csvs: string[]) {
+      async execute(csvs: string[]): Promise<number> {
+        if (csvs.length === 0) throw new Error("Invalid array");
+
+        const start = Date.now();
         for (const csv of csvs) {
             const csvName = csv.replace(/[0-9]/g, '').split('.')[0];
 
@@ -27,5 +30,9 @@ export default class ProcessarCsvs {
                 await entity.processCsv(lineSplitted);
             }
         }
+        const end = Date.now();
+        const ellapsedTime = end - start;
+
+        return ellapsedTime;
     }
 }
