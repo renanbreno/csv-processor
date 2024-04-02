@@ -27,7 +27,7 @@ export default class ProcessarCsvs {
 
             for await (const line of readedLine) {
                 const lineSplitted = line.replaceAll("\"", "").split(";");
-                await entity.processCsv(lineSplitted);
+                entity.processCsv(lineSplitted);
             }
         }
         const end = Date.now();
